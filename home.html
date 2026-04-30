@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -16,7 +15,8 @@
                 <span>Mirai</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <!-- Link navigasi utama -->
+                <li><a href="index.html" class="nav-active">Home</a></li>
                 <li><a href="screening.html">Autism Test</a></li>
                 <li><a href="information.html">Information</a></li>
                 <li><a href="therapists.html">Therapists</a></li>
@@ -26,99 +26,98 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Hero Section -->
+    <main class="home-page">
         <section class="hero">
-            <div class="hero-icon">
-                <img src="heart-icon.png" alt="Icon">
-            </div>
-            <h1>Welcome to Mirai</h1>
-            <p>Your trusted resource for autism awareness, screening, support, and community connection. Together, we create understanding and acceptance.</p>
-            <div class="hero-buttons">
-                <!-- Tombol ini nanti akan diarahkan oleh JS ke halaman screening -->
-                <button class="btn-primary" id="btnStartScreening">Start Screening Test →</button>
-                <button class="btn-secondary">Learn More</button>
+            <div class="hero-content">
+                <div class="hero-icon-wrapper">
+                    <div class="heart-badge">🤍</div>
+                </div>
+                <h1>Welcome to Mirai</h1>
+                <p>Your trusted resource for autism awareness, screening, support, and community connection. Together, we create understanding and acceptance.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="location.href='screening.html'">Start Screening Test →</button>
+                    <button class="btn-outline">Learn More</button>
+                </div>
             </div>
         </section>
 
-        <!-- Services Section -->
         <section class="services">
-            <h2>Our Services</h2>
-            <p>Explore our comprehensive resources and tools designed to support individuals, families, and communities.</p>
-            
-            <div class="services-grid">
-                <!-- Card 1: Autism Test -->
-                <div class="service-card">
-                    <div class="icon-box blue-bg">📋</div>
-                    <h3>Autism Test</h3>
-                    <p>Take our interactive screening assessment to better understand autism indicators.</p>
-                    <a href="screening.html" class="explore-link">Explore →</a>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>Explore our comprehensive resources and tools designed to support individuals, families, and communities.</p>
                 </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon-box blue-soft">📋</div>
+                        <h3>Autism Test</h3>
+                        <p>Take our interactive screening assessment to better understand autism indicators.</p>
+                        <a href="screening.html" class="explore-link">Explore →</a>
+                    </div>
 
-                <!-- Card 2: Information -->
-                <div class="service-card">
-                    <div class="icon-box purple-bg">📖</div>
-                    <h3>Information</h3>
-                    <p>Learn about autism, symptoms, causes, and therapy options.</p>
-                    <a href="information.html" class="explore-link">Explore →</a>
-                </div>
+                    <div class="service-card">
+                        <div class="icon-box purple-soft">📖</div>
+                        <h3>Information</h3>
+                        <p>Learn about autism, symptoms, causes, and therapy options.</p>
+                        <a href="information.html" class="explore-link">Explore →</a>
+                    </div>
 
-                <!-- Card 3: Find Therapists -->
-                <div class="service-card">
-                    <div class="icon-box green-bg">👥</div>
-                    <h3>Find Therapists</h3>
-                    <p>Browse qualified therapists and services in your area.</p>
-                    <a href="therapists.html" class="explore-link">Explore →</a>
-                </div>
+                    <div class="service-card">
+                        <div class="icon-box green-soft">👥</div>
+                        <h3>Find Therapists</h3>
+                        <p>Browse qualified therapists and services in your area.</p>
+                        <a href="therapists.html" class="explore-link">Explore →</a>
+                    </div>
 
-                <!-- Card 4: News -->
-                <div class="service-card">
-                    <div class="icon-box orange-bg">📰</div>
-                    <h3>News</h3>
-                    <p>Read the latest news, research, and stories about autism.</p>
-                    <a href="news.html" class="explore-link">Explore →</a>
-                </div>
+                    <div class="service-card">
+                        <div class="icon-box orange-soft">📰</div>
+                        <h3>News</h3>
+                        <p>Read the latest news, research, and stories about autism.</p>
+                        <a href="news.html" class="explore-link">Explore →</a>
+                    </div>
 
-                <!-- Card 5: Community Forum -->
-                <div class="service-card">
-                    <div class="icon-box pink-bg">💬</div>
-                    <h3>Community Forum</h3>
-                    <p>Connect with others, ask questions, and share experiences.</p>
-                    <a href="forum.html" class="explore-link">Explore →</a>
+                    <div class="service-card">
+                        <div class="icon-box pink-soft">💬</div>
+                        <h3>Community Forum</h3>
+                        <p>Connect with others, ask questions, and share experiences.</p>
+                        <a href="forum.html" class="explore-link">Explore →</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about-summary">
-            <h2>Understanding Autism Together</h2>
-            <p>Autism Spectrum Disorder (ASD) is a developmental condition that affects communication, behavior, and social interaction. Early screening and support can make a significant difference. Our platform provides accessible information, professional resources, and a supportive community.</p>
-            <button class="btn-primary-blue">Learn About Autism →</button>
+        <section class="about-blue">
+            <div class="container">
+                <h2>Understanding Autism Together</h2>
+                <p>Autism Spectrum Disorder (ASD) is a developmental condition that affects communication, behavior, and social interaction.</p>
+                <button class="btn-primary" onclick="location.href='information.html'">Learn About Autism →</button>
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <div class="footer-info">
+            <div class="footer-brand">
                 <div class="logo">
                     <img src="logo-mirai.png" alt="Mirai Logo">
                     <span>Mirai</span>
                 </div>
-                <p>Supporting autism awareness, screening, and community connection. Building a more inclusive world together.</p>
+                <p class="brand-subtitle">Autism Online Learning</p>
+                <p class="brand-desc">Supporting autism awareness, screening, and community connection.</p>
             </div>
-            
-            <div class="footer-links">
+            <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
+                    <!-- Quick links diperbaiki -->
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="screening.html">Take Autism Test</a></li>
                     <li><a href="information.html">Learn About Autism</a></li>
                     <li><a href="therapists.html">Find Therapists</a></li>
                     <li><a href="forum.html">Community Forum</a></li>
                 </ul>
             </div>
-
-            <div class="footer-contact">
+            <div class="footer-column">
                 <h4>Contact Us</h4>
                 <p>📧 support@mirai-autism.org</p>
                 <p>📍 Jakarta Barat, Indonesia</p>
@@ -129,8 +128,5 @@
             <p>&copy; 2026 Mirai - Autism Online Learning. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- File JS kamu nantinya -->
-    <script src="script.js"></script>
 </body>
 </html>
