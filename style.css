@@ -586,3 +586,100 @@ footer {
 .read-more:hover {
     padding-left: 5px;
 }
+
+/* SIGN UP/IN */
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.auth-welcome {
+  background: #e4f0fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.auth-logo {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.auth-logo img {
+  width: 42px;
+}
+
+.auth-welcome h3 {
+  color: #3f6f9f;
+  font-size: 24px;
+}
+
+.auth-welcome h1,
+.auth-form-box h1 {
+  color: #263247;
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.auth-form-panel {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-form-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-switch {
+  font-size: 14px;
+  color: #66728a;
+}
+
+.auth-switch a {
+  color: #263247;
+  font-weight: bold;
+}
+
+.auth-form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form-box label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.auth-form-box input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.terms-row {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.btn-primary {
+  align-self: flex-end;
+}
