@@ -418,6 +418,7 @@ footer {
     gap: 10px;
 }
 
+/* FORUM */
 /* Memastikan postingan baru punya style yang sama dengan image_0dacf6.png */
 .forum-card {
     background: white;
@@ -426,3 +427,26 @@ footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     margin-bottom: 20px;
 }
+
+.forum-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.text-gray { color: #888; font-size: 0.85rem; }
+
+.reply-item {
+    background: #f8fbff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.replies-list {
+    margin-top: 10px;
+}
+
+/*NEWS*/
