@@ -1,0 +1,290 @@
+/* --- GLOBAL & VARIABLES --- */
+:root {
+    --primary-blue: #6da1d2;
+    --dark-blue: #2c3e50;
+    --light-bg: #f8fbff;
+    --gray-text: #666;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    color: var(--dark-blue);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- NAVBAR & FOOTER (Universal) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: var(--white);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--primary-blue);
+}
+
+.logo img { height: 35px; }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--gray-text);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-active {
+    background: var(--primary-blue);
+    color: var(--white) !important;
+    padding: 6px 15px;
+    border-radius: 6px;
+}
+
+/* --- HOMEPAGE SPECIFIC --- */
+.home-page .hero {
+    background: radial-gradient(circle at top, #e3effb 0%, #ffffff 70%);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.heart-badge {
+    background: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.home-page .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.blue-soft { background: #eef4ff; color: #4a90e2; }
+.purple-soft { background: #f5eeff; color: #9b51e0; }
+.green-soft { background: #eefff2; color: #27ae60; }
+.orange-soft { background: #fff5ee; color: #e67e22; }
+.pink-soft { background: #ffeef5; color: #e91e63; }
+
+/* --- SCREENING PAGE SPECIFIC --- */
+.screening-page {
+    background-color: #f0f4f8; /* BG biru muda sesuai gambar */
+    padding: 60px 0;
+    min-height: 80vh;
+}
+
+.test-intro { text-align: center; margin-bottom: 40px; }
+
+.gender-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-gender {
+    padding: 12px 35px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.male { background: #6da1d2; }
+.female { background: #f794ac; }
+
+.quiz-header-card, .question-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.quiz-info { display: flex; gap: 15px; align-items: center; }
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: #eef4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar-container {
+    background: #eee;
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.progress-fill {
+    background: var(--primary-blue);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.notice-box {
+    background: #eef6ff;
+    padding: 15px;
+    border-radius: 10px;
+    color: #4a6fa5;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.option-item {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: left;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.option-item:hover { background: #f9fbff; border-color: var(--primary-blue); }
+
+.btn-next {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    float: right;
+    cursor: pointer;
+}
+
+/* --- FOOTER STYLING --- */
+footer {
+    padding: 50px 0 20px;
+    border-top: 1px solid #eee;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-brand .brand-subtitle { font-weight: bold; color: #888; }
+.footer-brand .brand-desc { max-width: 300px; font-size: 13px; color: #aaa; }
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column ul a { text-decoration: none; color: #666; font-size: 14px; }
+.footer-bottom { text-align: center; margin-top: 40px; color: #ccc; font-size: 12px; }
+
+/* Pastikan quiz-section lebar maksimal agar rapi */
+.quiz-section {
+    max-width: 800px;
+    margin: 40px auto;
+    animation: fadeIn 0.5s ease-in-out; /* Efek muncul pelan-pelan */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mempercantik tampilan audio icon */
+.question-text h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
+
+/* Hover effect untuk tombol gender agar lebih interaktif */
+.btn-gender:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    transition: 0.2s;
+}
+
+/* Style untuk tombol terpilih */
+.option-item.selected {
+    border-color: #6da1d2;
+    background-color: #eef6ff;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(109, 161, 210, 0.5);
+}
+
+/* Tombol Previous (Secondary) */
+.btn-secondary {
+    background: white;
+    border: 1px solid #6da1d2;
+    color: #6da1d2;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #f0f7ff;
+}
+
+/* Tombol Next saat disabled */
+.btn-next:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Memastikan tata letak tombol navigasi */
+.test-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
