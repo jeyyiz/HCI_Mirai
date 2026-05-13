@@ -1,3 +1,4 @@
+<!-- therapists -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -103,13 +104,17 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="screening.html">Autism Test</a></li>
-                    <li><a href="therapists.html">Find Therapists</a></li>
+                    <li><a href="information.html">Information</a></li>
+                    <li><a href="therapists.html">Therapists</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="forum.html">Forum</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Contact Us</h4>
                 <p>📧 support@mirai-autism.org</p>
                 <p>📍 Jakarta Barat, Indonesia</p>
+                <p>📞 +62 123-4567-8911</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -119,11 +124,9 @@
 
     <script>
         function filterBy(region, btn) {
-            // Update button active state
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // Filter cards
             const cards = document.querySelectorAll('.therapist-card');
             let count = 0;
             
