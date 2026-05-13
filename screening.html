@@ -62,6 +62,9 @@
                 <div class="question-card">
                     <div class="question-text">
                         <h3 id="questionTitle">Loading...</h3>
+                        <button class="speaker-btn" id="speakerBtn" onclick="playAudio()" title="Listen to question">
+                            🔊
+                        </button>
                     </div>
                     <div class="options-list" id="optionsContainer">
                         <button class="option-item" onclick="selectOption(0)">Definitely Agree</button>
@@ -109,6 +112,52 @@
         </div>
     </footer>
 
+    <style>
+        .question-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .question-text h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            flex: 1;
+        }
+
+        .speaker-btn {
+            background: #eef4ff;
+            border: 2px solid #d0e4f7;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .speaker-btn:hover {
+            background: #d0e4f7;
+            transform: scale(1.1);
+        }
+
+        .speaker-btn.playing {
+            background: #6da1d2;
+            border-color: #6da1d2;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.12); }
+        }
+    </style>
+
     <script>
         const questions = [
             "I often notice small sounds when others do not",
@@ -127,6 +176,45 @@
 
         let currentQuestionIndex = 0;
         let answers = new Array(questions.length).fill(null);
+        let currentAudio = null;
+
+        function playAudio() {
+            const btn = document.getElementById('speakerBtn');
+
+            // If already playing, stop it
+            if (currentAudio && !currentAudio.paused) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                btn.classList.remove('playing');
+                return;
+            }
+
+            const qNumber = currentQuestionIndex + 1;
+
+            // Try mp3 first, fallback to wav
+            currentAudio = new Audio(`assets/Question Audio/Q${qNumber}.mp3`);
+            btn.classList.add('playing');
+
+            currentAudio.play().catch(() => {
+                currentAudio = new Audio(`assets/Question Audio/Q${qNumber}.wav`);
+                currentAudio.play().catch(() => {
+                    btn.classList.remove('playing');
+                });
+                currentAudio.onended = () => btn.classList.remove('playing');
+            });
+
+            currentAudio.onended = () => btn.classList.remove('playing');
+        }
+
+        function stopAudio() {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                currentAudio = null;
+            }
+            const btn = document.getElementById('speakerBtn');
+            if (btn) btn.classList.remove('playing');
+        }
 
         function startQuiz(gender) {
             document.getElementById('introSection').style.display = 'none';
@@ -135,7 +223,9 @@
         }
 
         function updateQuestion() {
-            document.getElementById('questionTitle').innerText = questions[currentQuestionIndex] + " 🔊";
+            stopAudio(); // Stop audio when switching questions
+
+            document.getElementById('questionTitle').innerText = questions[currentQuestionIndex];
             document.getElementById('questionCounter').innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
             const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
             document.getElementById('progressBar').style.width = progress + "%";
