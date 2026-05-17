@@ -890,3 +890,5 @@ footer {
 }
 
 .mirai-textarea { min-height: 120px; resize: vertical; }
+
+.sign:hover{text-decoration: underline;}
