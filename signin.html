@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <a href="index.html" class="back-button"><</a>
   <main class="auth-page">
     <section class="auth-panel auth-welcome">
       <div class="auth-logo">
@@ -20,27 +20,56 @@
 
     <section class="auth-panel auth-form-panel">
       <div class="question-card">
-        <h1>Sign in</h1>
-
-        <p class="auth-switch">
-          Don’t have an account yet?
-          <a href="signup.html">Sign Up</a>
-        </p>
-
+        <h1>Sign In</h1>
         <form>
-          <label for="username">Username/Email</label>
-          <input type="text" id="username" name="username">
+          <label for="username">Email</label><br>
+          <input type="text" id="username" name="username" placeholder="Your Email"><br><br>
 
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password">
+          <label for="password">Password</label><br>
+          <input type="password" id="password" name="password" placeholder="Your Password"><br><br>
 
           <button type="submit" class="btn-next">
             Sign In →
           </button>
+          <p class="auth-switch">
+            Don’t have an account yet?
+            <a href="signup.html">Sign Up</a>
+          </p>
         </form>
       </div>
     </section>
   </main>
-
+  <footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="logo">
+                <img src="logo-mirai.png" alt="Mirai Logo">
+                <span>Mirai</span>
+            </div>
+            <p class="brand-subtitle">Autism Online Learning</p>
+            <p class="brand-desc">Supporting autism awareness, screening, and community connection. Building a more inclusive world together.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="screening.html">Autism Test</a></li>
+                <li><a href="information.html">Information</a></li>
+                <li><a href="therapists.html">Therapists</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <p>📧 support@mirai-autism.org</p>
+            <p>📞 +62 123-4567-8911</p>
+            <p>📍 Jakarta Barat, Indonesia</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mirai - Autism Online Learning. All rights reserved.</p>
+    </div>
+</footer>
 </body>
 </html>
