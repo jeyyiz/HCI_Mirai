@@ -144,48 +144,101 @@ if (filterButtons.length > 0) {
 // 3. LOGIKA SIGN UP/SIGN IN (validasi)
 // ==========================================
 let form_signup = document.getElementById("signupForm");
-let errorMsg = document.getElementById("errorMsg");
 
 form_signup.onsubmit = function(event){
+
     event.preventDefault();
 
-    let name = document.getElementById("fullname").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    let fullName = document.getElementById("fullname");
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
 
-    if (name == ""){
-        errorMsg.innerHTML = "Name cannot be empty";
+    let valid = true;
+
+    // NAME VALIDATION
+    if(fullName.value.trim() == ""){
+        document.getElementById("errorMsgName").innerHTML =
+        "Full name is required";
+
+        valid = false;
     }
-    else if (email == ""){
-        errorMsg.innerHTML = "Email cannot be empty";
+
+    // EMAIL VALIDATION
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(email.value.trim() == ""){
+        document.getElementById("errorMsgEmail").innerHTML =
+        "Email cannot be empty";
+
+        valid = false;
     }
-    else if (!email.includes("@")){
-        errorMsg.innerHTML = "Email must contain @";
+    else if(!emailPattern.test(email.value)){
+        document.getElementById("errorMsgEmail").innerHTML =
+        "Please enter a valid email";
+
+        valid = false;
     }
-    else if (password == ""){
-        errorMsg.innerHTML = "Password cannot be empty";
+
+    // PASSWORD VALIDATION
+    let passwordPattern = /^.{8,}$/;
+
+    if(password.value.trim() == ""){
+        document.getElementById("errorMsgPassword").innerHTML =
+        "Password cannot be empty";
+
+        valid = false;
     }
-    else if (password.length < 8){
-        errorMsg.innerHTML = "Password must be at least 8 characters";
+    else if(!passwordPattern.test(password.value)){
+        document.getElementById("errorMsgPassword").innerHTML =
+        "Password must be at least 8 characters";
+
+        valid = false;
     }
-    else {
-        errorMsg.innerHTML = ""
+
+    // SUCCESS
+    if(valid){
         alert("Sign up successful!");
     }
-};
+}
 
-let form_signin = document.getElementById("signinForm");
+let signinForm = document.getElementById("signinForm");
 
-form_signin.onsubmit = function(event){
-    event.preventDefault();
+if(signinForm){
 
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    signinForm.onsubmit = function(event){
 
-    if (email == "" || password == "") {
-        alert("Email and password cnnot be empty");
+        event.preventDefault();
+
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+
+        let emailError = document.getElementById("errorMsgEmail");
+        let passwordError = document.getElementById("errorMsgPassword");
+
+        let valid = true;
+
+        emailError.innerHTML = "";
+        passwordError.innerHTML = "";
+
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(email.value.trim() == ""){
+            emailError.innerHTML = "Email cannot be empty";
+            valid = false;
+        }
+        else if(!emailPattern.test(email.value.trim())){
+            emailError.innerHTML = "Please enter a valid email";
+            valid = false;
+        }
+
+        if(password.value.trim() == ""){
+            passwordError.innerHTML = "Password cannot be empty";
+            valid = false;
+        }
+
+        if(valid){
+            alert("Sign in successful!");
+        }
     }
-    else{
-        alert("Sign in successful!");
-    }
-};
+
+}
