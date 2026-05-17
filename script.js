@@ -8,7 +8,7 @@ function togglePostForm() {
     if (area) {
         area.style.display = (area.style.display === 'none' || area.style.display === '') ? 'block' : 'none';
     }
-}
+};
 
 // Simpan postingan ke LocalStorage
 function savePost() {
@@ -17,7 +17,7 @@ function savePost() {
 
     if (!titleEl.value || !contentEl.value) {
         return alert("Please fill all fields!");
-    }
+    };
 
     const newPost = {
         id: Date.now(),
@@ -59,7 +59,7 @@ function addReply(postId) {
         });
         localStorage.setItem('mirai_posts', JSON.stringify(posts));
         loadPosts(); 
-    }
+    };
 }
 
 // Tampilkan data dari LocalStorage ke HTML
@@ -105,7 +105,7 @@ function loadPosts() {
             </div>
         </div>
     `).join('');
-}
+};
 
 // Jalankan loadPosts saat halaman pertama kali dibuka
 window.addEventListener('load', loadPosts);
@@ -139,4 +139,53 @@ if (filterButtons.length > 0) {
             if (countEl) countEl.textContent = visibleCount;
         });
     });
-}
+};
+// ==========================================
+// 3. LOGIKA SIGN UP/SIGN IN (validasi)
+// ==========================================
+let form_signup = document.getElementById("signupForm");
+let errorMsg = document.getElementById("errorMsg");
+
+form_signup.onsubmit = function(event){
+    event.preventDefault();
+
+    let name = document.getElementById("fullname").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (name == ""){
+        errorMsg.innerHTML = "Name cannot be empty";
+    }
+    else if (email == ""){
+        errorMsg.innerHTML = "Email cannot be empty";
+    }
+    else if (!email.includes("@")){
+        errorMsg.innerHTML = "Email must contain @";
+    }
+    else if (password == ""){
+        errorMsg.innerHTML = "Password cannot be empty";
+    }
+    else if (password.length < 8){
+        errorMsg.innerHTML = "Password must be at least 8 characters";
+    }
+    else {
+        errorMsg.innerHTML = ""
+        alert("Sign up successful!");
+    }
+};
+
+let form_signin = document.getElementById("signinForm");
+
+form_signin.onsubmit = function(event){
+    event.preventDefault();
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (email == "" || password == "") {
+        alert("Email and password cnnot be empty");
+    }
+    else{
+        alert("Sign in successful!");
+    }
+};
