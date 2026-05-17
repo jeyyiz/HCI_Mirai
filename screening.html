@@ -169,9 +169,7 @@
             "I find it difficult to understand characters' intentions when reading a story",
             "I like to collect information about categories of things (e.g. types of car, bird, plant, etc)",
             "I can easily tell what someone is thinking or feeling just by looking at their face",
-            "I find it difficult to understand people's intentions",
-            "I prefer do thing the same way every time",
-            "I am good at spotting patterns that other people miss"
+            "I find it difficult to understand people's intentions"
         ];
 
         let currentQuestionIndex = 0;
@@ -192,11 +190,11 @@
             const qNumber = currentQuestionIndex + 1;
 
             // Try mp3 first, fallback to wav
-            currentAudio = new Audio(`assets/Question Audio/Q${qNumber}.mp3`);
+            currentAudio = new Audio(`assets/questionaudio/Q${qNumber}.mp3`);
             btn.classList.add('playing');
 
             currentAudio.play().catch(() => {
-                currentAudio = new Audio(`assets/Question Audio/Q${qNumber}.wav`);
+                currentAudio = new Audio(`assets/questionaudio/Q${qNumber}.wav`);
                 currentAudio.play().catch(() => {
                     btn.classList.remove('playing');
                 });
