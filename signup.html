@@ -41,19 +41,20 @@
         <form id = "signupForm">
           <label for="fullname">Full Name</label><br>
           <input type="text" id="fullname" name="fullname" placeholder="Your full name"><br><br>
+          <p id="errorMsgName">Full name is required</p>
 
           <label for="email">Email</label><br>
           <input type="email" id="email" name="email" placeholder="Your email"><br><br>
+          <p id="errorMsgEmail"></p>
 
           <label for="password">Password</label><br>
           <input type="password" id="password" name="password" placeholder="Your password"><br><br>
+          <p id="errorMsgPassword"></p>
 
           <!-- <label class="terms-row">
             <input type="checkbox" name="terms">
             <span>I agree to Mirai's Terms of Service and Privacy Policy</span>
           </label> -->
-
-          <p id="errorMsg"></p>
 
           <button type="submit" class="btn-primary">
             Sign Up
