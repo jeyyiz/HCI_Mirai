@@ -896,12 +896,19 @@ footer {
 input {
     width: 300px;
     height: 40px;
-
+    margin-bottom: 4px;
     padding: 10px;
     font-size: 16px;
 }
 
 .errorMsg {
     color: red;
+    margin-top: 2px;
 }
 
+.buttom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
