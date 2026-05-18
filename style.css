@@ -892,3 +892,16 @@ footer {
 .mirai-textarea { min-height: 120px; resize: vertical; }
 
 .sign:hover{text-decoration: underline;}
+
+input {
+    width: 300px;
+    height: 40px;
+
+    padding: 10px;
+    font-size: 16px;
+}
+
+.errorMsg {
+    color: red;
+}
+
